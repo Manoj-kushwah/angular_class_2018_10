@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-nav-bar-top [app]="instance"></app-nav-bar-top>
+
+<div [ngSwitch]="appRoute">
+  <app-home *ngSwitchCase="textNav.HOME"></app-home>
+  <app-about *ngSwitchCase="textNav.ABOUT"></app-about>
+  <app-contact *ngSwitchCase="textNav.CONTACT"></app-contact>
+  <app-profile *ngSwitchCase="textNav.PROFILE"></app-profile>
+  <app-blog *ngSwitchCase="textNav.BLOG"></app-blog>
+</div>
