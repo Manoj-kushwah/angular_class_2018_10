@@ -8,7 +8,7 @@ import { AboutComponent } from './com/about/about.component';
 import { ContactComponent } from './com/contact/contact.component';
 import { ProfileComponent } from './com/profile/profile.component';
 import { BlogComponent } from './com/blog/blog.component';
-import {DataMapService} from "./services/data-map.service";
+import {DataMapService} from './services/data-map.service';
 
 @NgModule({
   declarations: [
