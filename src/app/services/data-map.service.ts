@@ -7,7 +7,7 @@ export class DataMapService {
   constructor() {
     console.log('User:', new User());
     this.userList = [];
-    this.userList.push(new User('Admin', '', 'male', Date.now(), 'admin@gmail.com'));
+    this.userList.push(new User('Admin', '', 'male', new Date('Oct 19, 2017').getTime(), 'admin@gmail.com'));
     generateUsers(this.userList);
   }
 

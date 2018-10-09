@@ -1,3 +1,4 @@
+<input type="text" (input)="searchQuery($event)">
 <table border="1">
   <tr>
     <th>First Name</th>
@@ -6,11 +7,11 @@
     <th>Dob</th>
     <th>Email</th>
   </tr>
-  <tr *ngFor="let user of dataMap.userList;">
+  <tr *ngFor="let user of list | slice:0:3">
     <td>{{user.firstName}}</td>
     <td>{{user.lastName}}</td>
     <td>{{user.gender}}</td>
-    <td>{{user.dob}}</td>
+    <td>{{user.dob | date:'MMM dd, yyyy - hh:mm a'}}</td>
     <td>{{user.email}}</td>
   </tr>
 </table>
