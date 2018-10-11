@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataMapService} from '../../services/data-map.service';
 import {User} from '../../utils/user';
+import {RequestHelper} from '../../services/RequestHelper';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +11,13 @@ import {User} from '../../utils/user';
 export class ProfileComponent implements OnInit {
   text1:string;
   list: User[];
-  constructor(public dataMap: DataMapService) {
+  constructor(public dataMap: DataMapService, private req1:RequestHelper) {
     this.list = this.dataMap.userList;
   }
 
   ngOnInit() {
     console.log('dataMap: ', this.dataMap);
+    this.req1.getAllUserData();
   }
 
   searchQuery(event: KeyboardEvent){

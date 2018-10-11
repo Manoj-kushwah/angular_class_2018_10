@@ -9,6 +9,8 @@ import { ContactComponent } from './com/contact/contact.component';
 import { ProfileComponent } from './com/profile/profile.component';
 import { BlogComponent } from './com/blog/blog.component';
 import {DataMapService} from './services/data-map.service';
+import {HttpClientModule} from '@angular/common/http';
+import {RequestHelper} from './services/RequestHelper';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import {DataMapService} from './services/data-map.service';
     BlogComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [
+    RequestHelper,
     DataMapService
   ],
   bootstrap: [AppComponent]
