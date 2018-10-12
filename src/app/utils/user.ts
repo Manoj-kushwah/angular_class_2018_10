@@ -4,12 +4,19 @@ export class User{
   private _gender: string;
   private _dob: number;
   private _email: string;
-  constructor(firstName?: string, lastName?: string, gender?: string, dob?: number, email?: string){
+  private _role: number;
+  private _password: string;
+  private _userId: number;
+  constructor(userId: number, role: number, email: string, firstName?: string, lastName?: string, gender?: string, dob?: number, password?: string){
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;
     this.dob = dob;
     this.email = email;
+    this.role = role;
+    this.password = password;
+    this.userId = userId;
+
   }
   public get firstName():string {
     return this._firstName;
@@ -40,5 +47,23 @@ export class User{
   }
   public set email(v: string) {
     this._email = v;
+  }
+  public get role():number {
+    return this._role;
+  }
+  public set role(v: number) {
+    this._role = v;
+  }
+  public get password():string {
+    return this._password;
+  }
+  public set password(v: string) {
+    this._password = v;
+  }
+  public get userId():number {
+    return this._userId;
+  }
+  public set userId(v: number) {
+    this._userId = v;
   }
 }

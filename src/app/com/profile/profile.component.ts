@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataMapService} from '../../services/data-map.service';
 import {User} from '../../utils/user';
 import {RequestHelper} from '../../services/RequestHelper';
+import {isArray} from 'rxjs/util/isArray';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +10,7 @@ import {RequestHelper} from '../../services/RequestHelper';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  text1:string;
+  dataList: any[];
   list: User[];
   constructor(public dataMap: DataMapService, private req1:RequestHelper) {
     this.list = this.dataMap.userList;
@@ -17,7 +18,21 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     console.log('dataMap: ', this.dataMap);
-    this.req1.getAllUserData();
+    this.req1.getAllUserData().then((value: User[]) => {
+      this.dataList = value;
+      this.initUserListByUserData(this.dataList);
+    }).catch((reason) => {
+
+    });
+  }
+
+  initUserListByUserData(list: any[]){
+    if(isArray(list)){
+      list.forEach((val, index, arr) => {
+        console.log('list: val:', val);
+        this.dataMap.addUserInUserListByUserData(val);
+      })
+    }
   }
 
   searchQuery(event: KeyboardEvent){

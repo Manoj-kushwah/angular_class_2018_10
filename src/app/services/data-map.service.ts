@@ -5,18 +5,17 @@ import {User} from '../utils/user';
 export class DataMapService {
   public userList: User[];
   constructor() {
-    console.log('User:', new User());
     this.userList = [];
-    this.userList.push(new User('Admin', '', 'male', new Date('Oct 19, 2017').getTime(), 'admin@gmail.com'));
-    generateUsers(this.userList);
   }
 
-}
+  public addUserInUserList(user: User): User{
+    this.userList.push(user);
+    return user;
+  }
 
-function generateUsers(list: User[]): User[]{
-  list.push(new User('User', '1', 'male', Date.now(), 'user_1@gmail.com'));
-  list.push(new User('User', '2', 'male', Date.now(), 'user_2@gmail.com'));
-  list.push(new User('User', '3', 'male', Date.now(), 'user_3@gmail.com'));
-  list.push(new User('User', '4', 'male', Date.now(), 'user_4@gmail.com'));
-  return list;
+  public addUserInUserListByUserData(userData): User{
+    let user = new User(userData.userId, userData.role, userData.email, userData.firstName, userData.lastName, userData.gender, userData.dob, userData.password);
+    return this.addUserInUserList(user);
+  }
+
 }
