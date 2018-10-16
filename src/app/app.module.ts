@@ -11,20 +11,16 @@ import { BlogComponent } from './com/blog/blog.component';
 import {DataMapService} from './services/data-map.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RequestHelper} from './services/RequestHelper';
+import {RouterModule} from '@angular/router';
+import {AppRouteModule} from './modules/app/app.route.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    NavBarTopComponent,
-    AboutComponent,
-    ContactComponent,
-    ProfileComponent,
-    BlogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRouteModule
   ],
   providers: [
     RequestHelper,

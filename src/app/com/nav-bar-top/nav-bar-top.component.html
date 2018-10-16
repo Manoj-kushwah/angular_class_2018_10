@@ -4,19 +4,19 @@
   </div>
   <ul class="c-p" style="float: right">
     <li>
-      <a (click)="changeCom(text.HOME)">{{text.HOME | titlecase}}</a>
+      <a [routerLink]="['home']">{{text.HOME | titlecase}}</a>
     </li>
     <li>
-      <a (click)="changeCom(text.ABOUT)">{{text.ABOUT | titlecase}}</a>
+      <a [routerLink]="['about']">{{text.ABOUT | titlecase}}</a>
     </li>
     <li>
-      <a (click)="changeCom(text.CONTACT)">{{text.CONTACT | titlecase}}</a>
+      <a [routerLink]="['contact']">{{text.CONTACT | titlecase}}</a>
     </li>
     <li>
-      <a (click)="changeCom(text.PROFILE)">{{text.PROFILE | titlecase}}</a>
+      <a [routerLink]="['profile']">{{text.PROFILE | titlecase}}</a>
     </li>
     <li>
-      <a (click)="changeCom(text.BLOG)">{{text.BLOG | titlecase}}</a>
+      <a [routerLink]="['blog']">{{text.BLOG | titlecase}}</a>
     </li>
   </ul>
 </div>
