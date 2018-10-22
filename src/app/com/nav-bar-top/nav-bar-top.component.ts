@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AppComponent} from '../../app.component';
-import {NavBarText} from '../../constants/nav-bar-text'
+import {NavBarText} from '../../constants/nav-bar-text';
 
 @Component({
   selector: 'app-nav-bar-top',
@@ -9,13 +9,16 @@ import {NavBarText} from '../../constants/nav-bar-text'
 })
 export class NavBarTopComponent implements OnInit {
   @Input('app') private app: AppComponent;
-  public text: NavBarText = NavBarText;
-  constructor() { }
+  public text = NavBarText;
+
+  constructor() {
+  }
 
   ngOnInit() {
     console.log(this.app);
   }
-  changeCom(str: string){
+
+  changeCom(str: string) {
     this.app.appRoute = str;
   }
 }
